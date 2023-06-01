@@ -1,38 +1,43 @@
 <h1>Pruebas de la libreria Primeng</h1>
-<p>Ingresa los siguientes datos para registrar una nueva máquina virutal 💻.</p>
+<p>Ingresa los siguientes datos para crear una nueva máquina virutal 💻.</p>
 
 <form name="nuevaMaquinaVirtual">
   <main>
     <section class="seccion__form__maquinavirtual">
       <h2>Identificación de la máquina</h2>
       <section class="campos__seccion">
-        <div class="contenedor__campo__input">
+        <div class="contenedor__campo__input input__text">
           <label for="nombreRecurso" class="label__input">Nombre recurso</label>
-          <input type="text" id="nombreRecurso" pInputText [(ngModel)]="nombreRecurso" [ngModelOptions]="{standalone: true}"/>
+          <input type="text" id="nombreRecurso" pInputText [(ngModel)]="nombreRecurso" name="nombreRecurso"/>
         </div>
-        <div class="contenedor__campo__input">
+        <div class="contenedor__campo__input input__text">
           <label for="alias" class="label__input">Alias</label>
-          <input type="text" id="alias" pInputText [(ngModel)]="alias" [ngModelOptions]="{standalone: true}"/>
+          <input type="text" id="alias" pInputText [(ngModel)]="alias" name="alias"/>
         </div>
-        <div class="contenedor__campo__input">
-          <label for="dominio" class="label__input">Dominio web</label>
-          <input type="text" id="dominio" pInputText [(ngModel)]="dominioWeb" [ngModelOptions]="{standalone: true}"/>
+        <div class="contenedor__campo__input input__text">
+          <label for="dominioWeb" class="label__input">Dominio web</label>
+          <input type="text" id="dominioWeb" pInputText [(ngModel)]="dominioWeb" name="dominioWeb"/>
         </div>
         <div class="contenedor__campo__input">
           <label class="label__input">Sistema operativo</label>
           <div class="flex align-items-center">
-            <div class="radio__group__form">
-              <p-radioButton name="sistemaOperativo" value="windows" [(ngModel)]="sistemaOperativo" inputId="sistemaWindows"></p-radioButton>
-              <label for="sistemaWindows" class="">Windows</label>
-              <p-radioButton name="sistemaOperativo" value="kali" [(ngModel)]="sistemaOperativo" inputId="sistemaKali"></p-radioButton>
-              <label for="sistemaKali" class="">Kali</label>
-              <p-radioButton name="sistemaOperativo" value="redhat" [(ngModel)]="sistemaOperativo" inputId="sistemaRedhat"></p-radioButton>
-              <label for="sistemaRedhat" class="">RedHat</label>
+            <div class="contenedor__opciones__radio">
+              <div  class="radio__group__form">
+                <p-radioButton name="sistemaOperativo" value="windows" [(ngModel)]="sistemaOperativo" inputId="sistemaWindows"></p-radioButton>
+                <label for="sistemaWindows" class="">Windows</label>
+              </div>
+              <div class="radio__group__form">
+                <p-radioButton name="sistemaOperativo" value="kali" [(ngModel)]="sistemaOperativo" inputId="sistemaKali"></p-radioButton>
+                <label for="sistemaKali" class="">Kali</label>
+              </div>
+              <div class="radio__group__form">
+                <p-radioButton name="sistemaOperativo" value="redhat" [(ngModel)]="sistemaOperativo" inputId="sistemaRedhat"></p-radioButton>
+                <label for="sistemaRedhat" class="">RedHat</label>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <hr>
     </section>
 
     <section class="seccion__form__maquinavirtual">
@@ -40,27 +45,28 @@
       <section class="campos__seccion">
         <div class="contenedor__campo__input">
           <label for="capacidadDisco" class="label__input">Disco</label>
-          <p-inputNumber inputId="capacidadDisco" [(ngModel)]="capacidadDisco"> </p-inputNumber>
+          <p-inputNumber inputId="capacidadDisco" [(ngModel)]="capacidadDisco" name="capacidadDisco" width="300px"> </p-inputNumber>
         </div>
         <div class="contenedor__campo__input">
           <label for="capacidadRam" class="label__input">Ram</label>
-          <p-inputNumber inputId="capacidadRam" [(ngModel)]="capacidadRam"> </p-inputNumber>
+          <p-inputNumber inputId="capacidadRam" [(ngModel)]="capacidadRam" name="capacidadRam"> </p-inputNumber>
         </div>
       </section>
-      <hr>
     </section>
 
     <section class="seccion__form__maquinavirtual">
-      <h2>Capacidad computo</h2>
+      <h2>Copias de seguridad</h2>
       <section class="campos__seccion">
         <div class="contenedor__campo__input">
-          <label for="capacidadDisco" class="label__input">Día desconexión para hacer backups</label>
-          <p-calendar [(ngModel)]="fechaCopiaSeguridad" dateFormat="dd.mm.yy"></p-calendar>
+          <label for="fechaDesconexion" class="label__input">Día de desconexión para hacer backups</label>
+          <p-calendar [(ngModel)]="fechaCopiaSeguridad" dateFormat="dd/mm/yy" id="fechaDesconexion" name="fechaDesconexion"></p-calendar>
         </div>
       </section>
-      <hr>
     </section>
 
+    <section class="seccion__form__maquinavirtual">
+      <p-button label="Crear instancia" icon="pi pi-check" (onClick)="crearInstancia()"></p-button>
+    </section>
 
   </main>
 </form>

@@ -1,21 +1,39 @@
 .seccion__form__maquinavirtual {
   padding-left: 1.5rem;
+  padding-top: 1.3rem;
+}
+
+.seccion__form__maquinavirtual h2 {
+  margin-top: 0;
 }
 
 .campos__seccion {
   display: flex;
   flex-wrap: wrap;
+  border-bottom: 1px solid #c8c8c8;
 }
 
 .contenedor__campo__input {
   display: flex;
   flex-direction: column;
   margin: 0 2.3rem 1.2rem 0;
+}
+
+.input__text {
   width: 400px;
 }
 
 .label__input {
   margin-bottom: 0.5rem;
+}
+
+.contenedor__opciones__radio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.radio__group__form {
+  margin-bottom: 1.2rem;
 }
 
 .radio__group__form p-radioButton {
