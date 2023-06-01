@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-libreria-primeng';
+  nombreRecurso: string = '';
+  alias: string = '';
+  dominioWeb: string = '';
+  sistemaOperativo: string = '';
+  capacidadDisco: number = 0;
+  capacidadRam: number = 0;
+  fechaCopiaSeguridad: Date = new Date();
 }
